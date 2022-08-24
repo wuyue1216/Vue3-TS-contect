@@ -1,12 +1,23 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="main">
+    <LuckView/>
+  </div>
 </template>
 
-<style>
+<script lang="ts">
+import LuckView from './views/luckView.vue'
+export default{
+  components:{
+    LuckView,
+  }
+}
+</script>
+<style lang="scss">
+.main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
