@@ -3,14 +3,28 @@ import HomeView from '../views/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
-    component: HomeView
+    meta:{
+      title:'home',
+    },
+    component: HomeView,
   },
   {
     path: '/luckView',
     name: 'luckView',
+    meta:{
+      title:'luckView',
+    },
     component: () => import(/* webpackChunkName: "about" */ '../views/luckView.vue')
+  },
+  {
+    path: '/mapView',
+    name: 'mapView',
+    meta:{
+      title:'mapView',
+    },
+    component: () => import(/* webpackChunkName: "about" */ '../views/mapView.vue')
   }
 ]
 
@@ -19,4 +33,8 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title as string
+  next()
+})
 export default router

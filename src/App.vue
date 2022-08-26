@@ -1,22 +1,20 @@
 <template>
   <div class="main">
-    <LuckView/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
-import LuckView from './views/luckView.vue'
 export default{
   components:{
-    LuckView,
   }
 }
 </script>
 <style lang="scss">
 .main{
   width: 100%;
-  display: flex;
-  justify-content: center;
+  height: 100%;
+
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
