@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+
 const routes: Array<RouteRecordRaw> = [
+
   {
     path: '/home',
     name: 'home',
@@ -25,7 +27,11 @@ const routes: Array<RouteRecordRaw> = [
       title:'mapView',
     },
     component: () => import(/* webpackChunkName: "about" */ '../views/mapView.vue')
-  }
+  },
+  {
+    path: '/',
+    redirect: '/home',
+  },
 ]
 
 const router = createRouter({

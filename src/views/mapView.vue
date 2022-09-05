@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive ,onMounted} from "vue";
+import { defineComponent} from "vue";
 import { shallowRef } from '@vue/reactivity'
 import AMapLoader from '@amap/amap-jsapi-loader';
 export default defineComponent({
